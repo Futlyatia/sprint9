@@ -45,6 +45,11 @@ func TestMaximum(t *testing.T) {
 			want: 8,
 		},
 		{
+			name: "negative numbers",
+			data: []int{-1, -5, -3, -8, -2},
+			want: -1,
+		},
+		{
 			name: "already sorted",
 			data: []int{1, 2, 3, 4, 5},
 			want: 5,

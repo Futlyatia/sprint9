@@ -33,7 +33,7 @@ func maximum(data []int) int {
 	if len(data) == 1 {
 		return data[0]
 	}
-	maxInt := 0
+	maxInt := data[0]
 	for _, v := range data {
 		if v > maxInt {
 			maxInt = v
