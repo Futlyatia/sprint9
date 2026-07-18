@@ -64,25 +64,12 @@ func maxChunks(data []int) int {
 
 		go func(index int, part []int) {
 			defer wg.Done()
-
-			maxInt := part[0]
-			for _, v := range part {
-				if v > maxInt {
-					maxInt = v
-				}
-			}
-
-			maxValues[index] = maxInt
+			maxValues[index] = maximum(part)
 		}(i, data[start:end])
 	}
 	wg.Wait()
 
-	maxInt := maxValues[0]
-	for _, v := range maxValues {
-		if v > maxInt {
-			maxInt = v
-		}
-	}
+	maxInt := maximum(maxValues)
 
 	return maxInt
 }
